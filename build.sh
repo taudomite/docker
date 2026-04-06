@@ -14,6 +14,10 @@ MB="${1:-${LOOKBUS_MB:-4000MB}}"
 echo "Building Docker image: $IMAGE_NAME"
 docker build -t "$IMAGE_NAME" .
 
+echo "Stopping and removing existing container if any..."
+docker stop lookbus-cont 2>/dev/null || true
+docker rm lookbus-cont 2>/dev/null || true
+
 echo "Running container (temporary) with LOOKBUS_MB=$MB"
 docker run -d --rm --name lookbus-cont -e LOOKBUS_MB="$MB" "$IMAGE_NAME"
 
