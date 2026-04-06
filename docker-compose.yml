@@ -1,6 +1,6 @@
 services:
-  lookbusy:
-    container_name: lookbusy
+  lookbus:
+    container_name: lookbus
     restart: always
     build: .
     volumes:
