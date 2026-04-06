@@ -16,7 +16,7 @@ docker build -t "$IMAGE_NAME" .
 
 echo "Stopping and removing existing container if any..."
 docker stop lookbus-cont 2>/dev/null || true
-docker rm lookbus-cont 2>/dev/null || true
+docker rm -f lookbus-cont 2>/dev/null || true
 
 echo "Running container (temporary) with LOOKBUS_MB=$MB"
 docker run -d --rm --name lookbus-cont -e LOOKBUS_MB="$MB" "$IMAGE_NAME"
