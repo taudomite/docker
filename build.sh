@@ -21,4 +21,4 @@ docker rm -f lookbus-cont 2>/dev/null || true
 echo "Running container (temporary) with LOOKBUS_MB=$MB"
 docker run -d --rm --name lookbus-cont -e LOOKBUS_MB="$MB" "$IMAGE_NAME"
 
-echo "Container is running in the background. It will exit automatically after 60 seconds."
+echo "Container is running in the background"
